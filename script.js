@@ -40,7 +40,9 @@ chooseOperation(operator) {
 }
 
 compute() {
-
+    let computation
+    let prev = parseFloat(this.previousOperand)
+    let current = parseFloat(this.currentOperand)
 }
 
 updateDisplay() {
@@ -70,3 +72,12 @@ operatorButtons.forEach(button => {
     })
 })
 
+equalsButton.addEventListener('click', button => {
+    calculator.compute()
+    calculator.updateDisplay()
+})
+
+allClearButton.addEventListener('click', button => {
+    calculator.clear()
+    calculator.updateDisplay()
+})
