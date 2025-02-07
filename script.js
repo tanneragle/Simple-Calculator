@@ -3,6 +3,7 @@ const numberButtons = document.querySelectorAll(`[data-number]`)
 const operatorButtons = document.querySelectorAll(`[data-operator]`)
 const equalsButton = document.querySelector(`[data-equals]`)
 const allClearButton = document.querySelector(`[data-allClear]`)
+const deleteButton = document.querySelector(`[data-delete]`)
 const currentOperandTextElement = document.querySelector(`[data-currentOperand]`)
 const previousOperandTextElement = document.querySelector(`[data-previousOperand]`)
 
@@ -21,7 +22,7 @@ clear() {
 }
 
 delete() {
-
+    this.currentOperand = this.currentOperand.toString().slice(0, -1)
 }
 
 appendNumber(number) {
@@ -99,5 +100,10 @@ equalsButton.addEventListener('click', button => {
 
 allClearButton.addEventListener('click', button => {
     calculator.clear()
+    calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click', button => {
+    calculator.delete()
     calculator.updateDisplay()
 })
