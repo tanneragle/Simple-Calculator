@@ -41,8 +41,28 @@ chooseOperation(operator) {
 
 compute() {
     let computation
-    let prev = parseFloat(this.previousOperand)
+    let previous = parseFloat(this.previousOperand)
     let current = parseFloat(this.currentOperand)
+    if (isNaN(previous) || isNaN(current)) return
+    switch (this.operator) {
+        case '+':
+            computation = previous + current
+            break
+        case '-':
+            computation = previous - current
+            break
+        case 'x':
+            computation = previous * current
+            break
+        case '÷':
+            computation = previous / current
+            break
+        default :
+            return
+    }
+    this.currentOperand = computation
+    this.operator = undefined
+    this.previousOperand = ''
 }
 
 updateDisplay() {
