@@ -30,7 +30,13 @@ appendNumber(number) {
 }
 
 chooseOperation(operator) {
-    
+    if (this.currentOperand === '') return
+    if (this.previousOperand !== '') {
+        this.compute()
+    }
+    this.operator = operator
+    this.previousOperand = this.currentOperand
+    this.currentOperand = ''
 }
 
 compute() {
@@ -39,6 +45,7 @@ compute() {
 
 updateDisplay() {
     this.currentOperandTextElement.innerText = this.currentOperand
+    this.previousOperandTextElement.innerText = this.previousOperand
 }
 
 
@@ -48,9 +55,18 @@ updateDisplay() {
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
+// Button Calls
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
         calculator.updateDisplay()
     })
 })
+
+operatorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
