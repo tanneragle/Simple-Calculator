@@ -26,6 +26,10 @@ delete() {
 }
 
 appendNumber(number) {
+    if (this.justComputed) {
+        this.currentOperand = '';
+        this.justComputed = false;
+    }
     if (number === '.' && this.currentOperand.includes('.')) return
     this.currentOperand = this.currentOperand.toString() + number.toString()
 }
@@ -64,6 +68,7 @@ compute() {
     this.currentOperand = computation
     this.operator = undefined
     this.previousOperand = ''
+    this.justComputed = true
 }
 
 updateDisplay() {
