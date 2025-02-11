@@ -66,6 +66,7 @@ compute() {
             return
     }
     this.currentOperand = computation
+    this.currentOperand = Math.round(computation * 100000) / 100000;
     this.operator = undefined
     this.previousOperand = ''
     this.justComputed = true
