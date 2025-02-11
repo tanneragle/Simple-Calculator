@@ -73,7 +73,12 @@ compute() {
 
 updateDisplay() {
     this.currentOperandTextElement.innerText = this.currentOperand
-    this.previousOperandTextElement.innerText = this.previousOperand
+    if (this.operator != null) {
+        this.previousOperandTextElement.innerText = 
+            `${this.previousOperand} ${this.operator}`
+    } else {
+        this.previousOperandTextElement.innerText = ''
+    }
 }
 
 
