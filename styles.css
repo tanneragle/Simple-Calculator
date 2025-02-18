@@ -1,6 +1,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: normal;
 }
 
@@ -55,4 +55,15 @@ body {
 .output .current-operand {
     color: white;
     font-size: 3rem;
+}
+
+/* Potential Carolina Hurricanes Colors?
+button[data-operator], button[data-equals] {
+    background-color: rgba(206, 17, 38, .75);
+    color: white
+}
+
+button[data-allClear], button[data-delete] {
+    background-color: rgba(164, 169, 173, .75);
+    color: white;
 }
