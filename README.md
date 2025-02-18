@@ -1,9 +1,8 @@
 # Simple Calculator
-A basic calculator built using HTML, CSS, and JavaScript. It allows users to perform standard arithmetic operations with a clean, responsive design.
+A basic calculator built using HTML, CSS, and JavaScript that is able to perform standard arithmetic operations with a clean, responsive design.
 
 
-## 🚀 Live Demo  
-Experience the calculator in action:  
+## 🚀 Live Demo   
 🔗 **[Simple Calculator](https://tanneragle.github.io/Simple-Calculator/)** 
 
 
